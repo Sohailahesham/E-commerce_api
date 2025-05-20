@@ -6,76 +6,48 @@ This is a RESTful API built with Node.js, Express.js, and MongoDB for managing a
 
 ## 📁 Project Structure
 
-app.js – Main entry point of the application
+- **app.js** – Main application file
 
-config/
+- **config/**
+  - `multerConfig.js` – Handles file upload setup using Multer
 
-multerConfig.js – Handles image upload configuration
+- **controllers/** – Contains all route logic
+  - `adminController.js`
+  - `cartController.js`
+  - `orderController.js`
+  - `productController.js`
+  - `userController.js`
 
-controllers/ – Request handlers and business logic
+- **middlewares/** – Custom middlewares for various concerns
+  - `allowedTo.js` – Restricts route access by user role
+  - `asyncWrapper.js` – Handles async errors
+  - `cache.js` – Caches filtered email/status responses
+  - `validation.js` – Input validation logic
+  - `validationArrays.js` – Express-validator rule sets
+  - `verifyToken.js` – Verifies JWT token
 
-adminController.js
+- **models/** – MongoDB models using Mongoose
+  - `cartModel.js`
+  - `orderModel.js`
+  - `productModel.js`
+  - `userModel.js`
 
-cartController.js
+- **routes/** – API route definitions
+  - `adminRoutes.js`
+  - `cartRoutes.js`
+  - `orderRoutes.js`
+  - `productRoutes.js`
+  - `userRoutes.js`
 
-orderController.js
+- **uploads/**
+  - `products/` – Directory where uploaded product images are stored
 
-productController.js
-
-userController.js
-
-middlewares/ – Custom middleware functions
-
-allowedTo.js – Role-based access control
-
-asyncWrapper.js – Wrapper to catch async errors
-
-cache.js – Redis caching middleware
-
-validation.js – Request validation logic
-
-validationArrays.js – Express-validator schemas
-
-verifyToken.js – JWT verification middleware
-
-models/ – Mongoose data models
-
-cartModel.js
-
-orderModel.js
-
-productModel.js
-
-userModel.js
-
-routes/ – API route definitions
-
-adminRoutes.js
-
-cartRoutes.js
-
-orderRoutes.js
-
-productRoutes.js
-
-userRoutes.js
-
-uploads/ – Uploaded product images
-
-products/ – Stores uploaded product images
-
-utils/ – Utility/helper functions
-
-appError.js – Custom error class
-
-filter.js – Filtering utility
-
-generateJWT.js – Token generation helper
-
-pagination.js – Pagination helper
-
-redisClient.js – Redis client configuration
-
+- **utils/** – Utility functions and helpers
+  - `appError.js` – Custom error class
+  - `filter.js` – Filtering logic
+  - `generateJWT.js` – JWT creation
+  - `pagination.js` – Pagination support
+  - `redisClient.js` – Redis connection setup
 
 ---
 
